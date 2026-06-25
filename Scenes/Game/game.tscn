@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://b2yy3axurey8"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ev4jc"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[ext_resource type="Texture2D" uid="uid://duicsnqr6ebsl" path="res://Assets/Images/4 - free_-_skybox_cliffside_0.hdr" id="1_mv0hc"]
+[ext_resource type="PackedScene" uid="uid://c23ny0nnj4eb6" path="res://Scenes/Platform/platform.tscn" id="2_qxfds"]
+[ext_resource type="PackedScene" uid="uid://dqnnk454pwolf" path="res://Scenes/Player/player.tscn" id="3_qikps"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qxfds"]
+panorama = ExtResource("1_mv0hc")
 
 [sub_resource type="Sky" id="Sky_mv0hc"]
-sky_material = SubResource("ProceduralSkyMaterial_ev4jc")
+sky_material = SubResource("PanoramaSkyMaterial_qxfds")
 
 [sub_resource type="Environment" id="Environment_qxfds"]
 background_mode = 2
@@ -15,7 +18,17 @@ glow_enabled = true
 
 [node name="Game" type="Node" unique_id=205332310]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1856014829]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1811433231]
 environment = SubResource("Environment_qxfds")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1707906729]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 8, 5.5)
+
+[node name="Platform" parent="." unique_id=851856312 instance=ExtResource("2_qxfds")]
+
+[node name="Player" parent="." unique_id=792867854 instance=ExtResource("3_qikps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)
