@@ -16,6 +16,8 @@ sky = SubResource("Sky_mv0hc")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_qikps"]
+
 [node name="Game" type="Node" unique_id=205332310]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1856014829]
@@ -32,3 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 8, 5.
 
 [node name="Player" parent="." unique_id=792867854 instance=ExtResource("3_qikps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=310756709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_qikps")
