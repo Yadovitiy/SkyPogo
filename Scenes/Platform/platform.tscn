@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c23ny0nnj4eb6"]
 
+[ext_resource type="Script" uid="uid://c4fmm0r0bh0kr" path="res://Scenes/Platform/platform.gd" id="1_1bib6"]
 [ext_resource type="Material" uid="uid://dvuvi1a0phivb" path="res://Scenes/Platform/Platform_orange.tres" id="1_id4ne"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tcjj1"]
@@ -10,6 +11,7 @@ size = Vector3(3, 0.5, 3)
 size = Vector3(3, 0.5, 3)
 
 [node name="Platform" type="Node3D" unique_id=851856312]
+script = ExtResource("1_1bib6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=660273333]
 
@@ -18,3 +20,10 @@ mesh = SubResource("BoxMesh_tcjj1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1121088074]
 shape = SubResource("BoxShape3D_id4ne")
+
+[node name="Timer" type="Timer" parent="." unique_id=460889881]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
