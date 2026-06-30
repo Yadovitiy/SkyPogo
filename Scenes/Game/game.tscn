@@ -16,8 +16,6 @@ sky = SubResource("Sky_mv0hc")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_qikps"]
-
 [node name="Game" type="Node" unique_id=205332310]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1856014829]
@@ -28,17 +26,9 @@ shadow_enabled = true
 environment = SubResource("Environment_qxfds")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1707906729]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 8, 5.5)
+transform = Transform3D(0.9905145, -0.05621282, 0.12538406, 0, 0.9124926, 0.4090933, -0.13740832, -0.40521285, 0.90383714, 0.57308537, 5.0956078, 7.168624)
 
 [node name="Platform" parent="." unique_id=851856312 instance=ExtResource("2_qxfds")]
 
 [node name="Player" parent="." unique_id=792867854 instance=ExtResource("3_qikps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=310756709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CylinderMesh_qikps")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1329876323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3323038, 1, 0)
-mesh = SubResource("CylinderMesh_qikps")
