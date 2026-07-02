@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,4 +14,10 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	anim_player.play('vanish' )
+	
+ 
+
+
+func _on_animation_finished(anim_name: StringName) -> void:
 	queue_free()
