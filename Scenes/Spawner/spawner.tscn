@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cxouyjm7mm48d"]
+
+[ext_resource type="Script" uid="uid://cq8ecunuqnuln" path="res://Scenes/Spawner/spawner.gd" id="1_rd5sa"]
+[ext_resource type="PackedScene" uid="uid://c23ny0nnj4eb6" path="res://Scenes/Platform/platform.tscn" id="2_wbtia"]
+
+[node name="Spawner" type="Node" unique_id=2105370201]
+script = ExtResource("1_rd5sa")
+
+[node name="Platform" parent="." unique_id=851856312 instance=ExtResource("2_wbtia")]
+
+[connection signal="new_platform" from="Platform" to="." method="_on_new_platform"]

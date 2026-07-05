@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2yy3axurey8"]
 
 [ext_resource type="Texture2D" uid="uid://duicsnqr6ebsl" path="res://Assets/Images/4 - free_-_skybox_cliffside_0.hdr" id="1_mv0hc"]
-[ext_resource type="PackedScene" uid="uid://c23ny0nnj4eb6" path="res://Scenes/Platform/platform.tscn" id="2_qxfds"]
+[ext_resource type="PackedScene" uid="uid://cxouyjm7mm48d" path="res://Scenes/Spawner/spawner.tscn" id="3_i1e5p"]
 [ext_resource type="PackedScene" uid="uid://dqnnk454pwolf" path="res://Scenes/Player/player.tscn" id="3_qikps"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qxfds"]
@@ -28,7 +28,7 @@ environment = SubResource("Environment_qxfds")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1707906729]
 transform = Transform3D(0.9905145, -0.05621282, 0.12538406, 0, 0.9124926, 0.4090933, -0.13740832, -0.40521285, 0.90383714, 0.57308537, 5.0956078, 7.168624)
 
-[node name="Platform" parent="." unique_id=851856312 instance=ExtResource("2_qxfds")]
-
 [node name="Player" parent="." unique_id=792867854 instance=ExtResource("3_qikps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)
+
+[node name="Spawner" parent="." unique_id=2105370201 instance=ExtResource("3_i1e5p")]
