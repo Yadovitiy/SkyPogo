@@ -1,5 +1,9 @@
 extends Node3D
 
+
+
+class_name Platform
+
 signal new_platform(platform_pos: Vector3)
 
 

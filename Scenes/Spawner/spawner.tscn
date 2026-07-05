@@ -5,6 +5,7 @@
 
 [node name="Spawner" type="Node" unique_id=2105370201]
 script = ExtResource("1_rd5sa")
+platform_scene = ExtResource("2_wbtia")
 
 [node name="Platform" parent="." unique_id=851856312 instance=ExtResource("2_wbtia")]
 
