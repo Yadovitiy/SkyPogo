@@ -1,5 +1,12 @@
 extends Node3D
 
+
+const WAIT_TIME:float = 5.0
+const WAIT_TIME_VAR:float = 1.5
+ 
+
+
+
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 @onready var player_detector: Area3D = $PlayerDetector
@@ -11,7 +18,9 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	timer.wait_time = WAIT_TIME
+	timer.wait_time += randf_range(-WAIT_TIME_VAR, WAIT_TIME)
+	print(timer.wait_time)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
