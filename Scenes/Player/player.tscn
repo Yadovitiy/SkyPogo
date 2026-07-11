@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cr0gi4rr4t7td" path="res://Scenes/Player/player.gd" id="1_uvnfx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tugb3"]
-albedo_color = Color(0, 1, 0.9291558, 1)
+albedo_color = Color(0.5427474, 0.83044285, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uvnfx"]
 material = SubResource("StandardMaterial3D_tugb3")
