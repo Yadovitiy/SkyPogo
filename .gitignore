@@ -15,3 +15,16 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Godot 4+
+
+
+export_presets.cfg
+
+# Редакторы
+.vscode/
+.idea/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
