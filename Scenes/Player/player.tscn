@@ -2790,4 +2790,3 @@ skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2104392471]
 libraries/ = SubResource("AnimationLibrary_enij7")
-autoplay = &"walk"

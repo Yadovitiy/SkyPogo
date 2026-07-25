@@ -6,6 +6,9 @@ class_name Player
 const GRAVITY: float = 7.0
 const JUMP_FORCE: float = 5.0
 
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +18,23 @@ func _ready() -> void:
 
 	
 func _physics_process(delta: float) -> void:
+	handle_gravity(delta)
+	move_and_slide()
+	handle_animation()
+	
+	
+func handle_gravity(delta: float) -> void:
 	if is_on_floor():
 		velocity.y = JUMP_FORCE
 	else:
 		velocity.y -= GRAVITY * delta
-	move_and_slide()
+	
+
+
+
+
+func handle_animation() -> void:
+	if velocity.y > 0:
+		anim_player.play("jump")
+	else:
+		anim_player.play("fall")	
