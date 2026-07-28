@@ -26,7 +26,7 @@ shadow_enabled = true
 environment = SubResource("Environment_qxfds")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1707906729]
-transform = Transform3D(0.9905145, -0.05621282, 0.12538406, 0, 0.9124926, 0.40909332, -0.13740832, -0.40521285, 0.90383714, 0.57308537, 7.269069, 7.4561415)
+transform = Transform3D(0.98872447, -0.101562135, 0.11004121, 0.03324482, 0.8653871, 0.5, -0.1460093, -0.4907039, 0.8590058, 0, 10.278149, 8.792584)
 
 [node name="Player" parent="." unique_id=792867854 instance=ExtResource("3_qikps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)

@@ -50,7 +50,7 @@ _data = {
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1bib6"]
 height = 0.031764984
-radius = 1.1918945
+radius = 1.5234375
 
 [node name="Platform" type="Node3D" unique_id=851856312]
 script = ExtResource("1_1bib6")
