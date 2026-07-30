@@ -1,14 +1,14 @@
 extends Node
 
 
-
+@export var platform_scene: PackedScene
 
 func _enter_tree() -> void:
 	SignalHub.new_platform.connect(_on_new_platform)
 	
 
 
-@export var platform_scene: PackedScene
+
 
 
 func spawn_platform(old_platform_pos: Vector3) -> void:

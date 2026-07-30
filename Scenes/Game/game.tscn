@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b2yy3axurey8"]
 
+[ext_resource type="Script" uid="uid://dex3l1psvtr4m" path="res://Scenes/Game/game.gd" id="1_ciybh"]
 [ext_resource type="Texture2D" uid="uid://duicsnqr6ebsl" path="res://Assets/Images/4 - free_-_skybox_cliffside_0.hdr" id="1_mv0hc"]
 [ext_resource type="PackedScene" uid="uid://cxouyjm7mm48d" path="res://Scenes/Spawner/spawner.tscn" id="3_i1e5p"]
 [ext_resource type="PackedScene" uid="uid://dqnnk454pwolf" path="res://Scenes/Player/player.tscn" id="3_qikps"]
@@ -17,7 +18,10 @@ sky = SubResource("Sky_mv0hc")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i1e5p"]
+
 [node name="Game" type="Node" unique_id=205332310]
+script = ExtResource("1_ciybh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1856014829]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -33,3 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6858006, 0)
 
 [node name="PlayerCam" parent="." unique_id=1835395395 instance=ExtResource("4_i1e5p")]
 transform = Transform3D(0.98872447, -0.10156215, 0.11004121, 0.03324482, 0.8653871, 0.5, -0.14600933, -0.4907039, 0.85900575, 0, 10.278149, 8.792584)
+
+[node name="Floor" type="Area3D" parent="." unique_id=1311430486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2070561146]
+shape = SubResource("WorldBoundaryShape3D_i1e5p")
+
+[connection signal="body_entered" from="Floor" to="." method="_on_floor_body_entered"]
