@@ -3,6 +3,10 @@ extends Node
 
 
 
+func _enter_tree() -> void:
+	SignalHub.new_platform.connect(_on_new_platform)
+	
+
 
 @export var platform_scene: PackedScene
 
@@ -12,11 +16,8 @@ func spawn_platform(old_platform_pos: Vector3) -> void:
 	new_platform.position = old_platform_pos + Vector3(2, 1, -2)
 	
 	add_child(new_platform)
-	new_platform.new_platform.connect(_on_new_platform)
+	#new_platform.new_platform.connect(_on_new_platform)
 	
-	
-	
-
 
 
 func _on_new_platform(platform_pos: Vector3) -> void:

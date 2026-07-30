@@ -4,7 +4,7 @@ extends Node3D
 
 class_name Platform
 
-signal new_platform(platform_pos: Vector3)
+# signal new_platform(platform_pos: Vector3)
 
 
 
@@ -52,6 +52,8 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 		player_detector.body_entered.disconnect(_on_player_detector_body_entered)
 		print("Timer start")
 		timer.start()
-		new_platform.emit(position)
+		#new_platform.emit(position)
+		SignalHub._emit_new_platform(position)
+		
 		
 		
