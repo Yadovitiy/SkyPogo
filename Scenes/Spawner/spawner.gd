@@ -3,17 +3,35 @@ extends Node
 
 @export var platform_scene: PackedScene
 
+
+const OFFSET_UP: Vector2 = Vector2(2.5, 4.5)
+const OFFSET_SIDE: Vector2 = Vector2(1.7, 3.7)
+
+
+
+func _ready() -> void:
+	pass
+
 func _enter_tree() -> void:
 	SignalHub.new_platform.connect(_on_new_platform)
 	
 
-
-
-
+func get_random_offset(offset_range: Vector2) -> float:
+	if randf() < 0.5:
+		return randf_range(-offset_range.y, -offset_range.x)
+	else:
+		return randf_range(offset_range.x, offset_range.y)
+		
+ 
 
 func spawn_platform(old_platform_pos: Vector3) -> void:
 	var new_platform: Platform = platform_scene.instantiate()
-	new_platform.position = old_platform_pos + Vector3(2, 5, -2)
+	
+	var new_y: float = randf_range(OFFSET_UP.x, OFFSET_UP.y)
+	var new_x: float = get_random_offset(OFFSET_SIDE)
+	var new_z: float = get_random_offset(OFFSET_SIDE)
+	
+	new_platform.position = old_platform_pos + Vector3(new_x, new_y, new_z)
 	
 	add_child(new_platform)
 	#new_platform.new_platform.connect(_on_new_platform)
